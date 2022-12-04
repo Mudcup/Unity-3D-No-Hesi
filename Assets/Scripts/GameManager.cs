@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static int lastRoadPositionZ = 72;
+    public static int lastRoadPositionZ = 40;
 }
