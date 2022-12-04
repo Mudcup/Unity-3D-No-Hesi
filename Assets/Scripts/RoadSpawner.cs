@@ -21,8 +21,8 @@ public class RoadSpawner : MonoBehaviour
 
      foreach (GameObject o in roadList)
         {
-            o.transform.position = new Vector3(0, 0, (GameManager.lastRoadPositionZ + 24));
-            GameManager.lastRoadPositionZ += 24;
+            o.transform.position = new Vector3(0, 0, (GameManager.lastRoadPositionZ + 20));
+            GameManager.lastRoadPositionZ += 20;
         }
     }
 
@@ -35,8 +35,8 @@ public class RoadSpawner : MonoBehaviour
         {
             for(int i = 0; i < 4; i++)
             {
-                roadList.Add(Instantiate(road, new Vector3(0, 0, GameManager.lastRoadPositionZ + 24), Quaternion.identity) as GameObject);
-                GameManager.lastRoadPositionZ += 24;
+                roadList.Add(Instantiate(road, new Vector3(0, 0, GameManager.lastRoadPositionZ + 20), Quaternion.identity) as GameObject);
+                GameManager.lastRoadPositionZ += 20;
             }
         }
 
