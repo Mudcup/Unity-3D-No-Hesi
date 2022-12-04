@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -318,38 +318,38 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Ryan Sauer\Documents\GitHub\Unity-3D-No-Hesi
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 00680000
-    m_LastClickedID: 26624
-    m_ExpandedIDs: 000000000068000002680000046800000668000000ca9a3b
+    m_SelectedIDs: 8c690000
+    m_LastClickedID: 27020
+    m_ExpandedIDs: 000000000c6800000e6800001068000012680000d26e0000d86e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Prefabs
+      m_OriginalName: Prefabs
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 28390
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 5}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -361,7 +361,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000000680000026800000468000006680000
+    m_ExpandedIDs: 000000000c6800000e6800001068000012680000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -491,9 +491,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: de100000
       m_LastClickedID: 0
-      m_ExpandedIDs: 38fbffff
+      m_ExpandedIDs: 24c2ffff46f8ffff54f8ffff38fbffffe2690000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -792,13 +792,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.053147666, y: -0.35953373, z: 0.020513372, w: 0.93138325}
+    m_Target: {x: 0.34241596, y: -0.006481245, z: 0.0023596922, w: 0.93950903}
     speed: 2
-    m_Value: {x: 0.053148072, y: -0.35953647, z: 0.020513529, w: 0.93139035}
+    m_Value: {x: 0.34241658, y: -0.007890606, z: 0.0028733516, w: 0.93951076}
   m_Size:
-    m_Target: 6.2481575
+    m_Target: 9.2853565
     speed: 2
-    m_Value: 6.2481575
+    m_Value: 9.2853565
   m_Ortho:
     m_Target: 0
     speed: 2
