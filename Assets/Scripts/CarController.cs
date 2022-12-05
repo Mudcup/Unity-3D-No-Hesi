@@ -83,4 +83,41 @@ public class CarController : MonoBehaviour
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
     }
+
+    public void thetimerstarter()
+    {
+        StartCoroutine(waiter());
+    }
+
+    IEnumerator waiter()
+    {
+        int count = 3;
+        float time = .2f;
+        GameObject body, wheels, spoiler;
+        body = this.transform.GetChild(0).gameObject;
+        wheels = this.transform.GetChild(1).gameObject;
+        spoiler = this.transform.GetChild(2).gameObject.transform.GetChild(0).gameObject;
+
+
+        while (count > 0)
+        {
+            body.SetActive(false);
+            wheels.SetActive(false);
+            spoiler.SetActive(false);
+
+
+            yield return new WaitForSeconds(time);
+
+            body.SetActive(true);
+            wheels.SetActive(true);
+            spoiler.SetActive(true);
+
+            yield return new WaitForSeconds(time);
+
+            count--;
+        }
+
+        
+
+    }
 }
