@@ -12,7 +12,7 @@ public class RoadHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while(GameManager.lastRoadPositionZ <= mainCar.position.z + 100)
+        while(GameManager.lastRoadPositionZ <= mainCar.position.z + 200)
         {
             roadList.Add(Instantiate(road, new Vector3(0, 0, GameManager.lastRoadPositionZ + 20), Quaternion.identity) as GameObject);
             GameManager.lastRoadPositionZ += 20;

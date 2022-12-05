@@ -14,8 +14,8 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.6018156, g: 0.77384657, b: 0.7924528, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -689,8 +689,18 @@ PrefabInstance:
       objectReference: {fileID: 1315314710}
     - target: {fileID: 3469062038118288110, guid: 6c2306de6d022334b9892e2897398a57,
         type: 3}
+      propertyPath: offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3469062038118288110, guid: 6c2306de6d022334b9892e2897398a57,
+        type: 3}
+      propertyPath: offset.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3469062038118288110, guid: 6c2306de6d022334b9892e2897398a57,
+        type: 3}
       propertyPath: offset.z
-      value: -10
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c2306de6d022334b9892e2897398a57, type: 3}
@@ -889,7 +899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab60ac08d76c3149a9de90de1f2ceaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  road: {fileID: 1819563437025382065, guid: d3ae79e2e980ca04e8aed3fd39f342d8, type: 3}
+  road: {fileID: 8968352760154386623, guid: d3ae79e2e980ca04e8aed3fd39f342d8, type: 3}
   roadList: []
   mainCar: {fileID: 1315314710}
 --- !u!1 &1070777049
@@ -1149,7 +1159,7 @@ PrefabInstance:
     - target: {fileID: 7862541819272645783, guid: 2754243591247ce4f93e4640d41df1e4,
         type: 3}
       propertyPath: breakForce
-      value: 6000
+      value: 10000000
       objectReference: {fileID: 0}
     - target: {fileID: 7862541819272645783, guid: 2754243591247ce4f93e4640d41df1e4,
         type: 3}
