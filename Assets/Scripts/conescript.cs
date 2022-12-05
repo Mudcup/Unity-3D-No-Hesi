@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class conescript : MonoBehaviour
 {
@@ -22,6 +23,15 @@ public class conescript : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            GameManager.currCollisions++;
+            if(GameManager.currCollisions >= GameManager.maxCollisions)
+            {
+                GameManager.finalScore = other.gameObject.transform.position.z.ToString("0.00");
+                //Debug.Log("Final Score: " + GameManager.finalScore + "\n");
+                SceneManager.LoadScene("GameOver");
+            }
+            //Debug.Log("Number of Collisions: " + GameManager.currCollisions + "\n");
+
             other.attachedRigidbody.velocity = other.attachedRigidbody.velocity * slowdown;
             other.GetComponent<CarController>().thetimerstarter();
             Destroy(this.gameObject);
