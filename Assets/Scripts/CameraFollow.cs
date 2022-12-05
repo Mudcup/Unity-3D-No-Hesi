@@ -18,8 +18,10 @@ public class CameraFollow : MonoBehaviour
    
     private void HandleTranslation()
     {
-        var targetPosition = target.TransformPoint(offset);
-        transform.position = Vector3.Lerp(transform.position, targetPosition, translateSpeed * Time.deltaTime);
+        var targetPosition = target.position;
+        targetPosition[1] += 4;
+        targetPosition[2] -= 13;
+        transform.position = targetPosition;
     }
     private void HandleRotation()
     {
