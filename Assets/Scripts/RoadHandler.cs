@@ -32,7 +32,7 @@ public class RoadHandler : MonoBehaviour
         {
             Debug.Log("Tile rendered ahead of Car");
             roadList.Add(Instantiate(road, new Vector3(0, 0, GameManager.lastRoadPositionZ + 20), Quaternion.identity) as GameObject);
-            coneList.Add(Instantiate(cone, new Vector3(Random.Range(-8.0f, 8.0f), 1, GameManager.lastRoadPositionZ + 20), Quaternion.identity) as GameObject);
+            coneList.Add(Instantiate(cone, new Vector3(Random.Range(-8.0f, 8.0f), 0, GameManager.lastRoadPositionZ + 20), Quaternion.identity) as GameObject);
             
 
 
@@ -40,7 +40,7 @@ public class RoadHandler : MonoBehaviour
             {
                 GameObject tempcar;
 
-                carList.Add( tempcar = Instantiate(traffic, new Vector3(Random.Range(-8.0f, 8.0f), 1, GameManager.lastRoadPositionZ ), Quaternion.identity) as GameObject);
+                carList.Add( tempcar = Instantiate(traffic, new Vector3(Random.Range(-8.0f, 8.0f), 0, GameManager.lastRoadPositionZ ), Quaternion.identity) as GameObject);
                 tempcar.GetComponent<Rigidbody>().velocity = player.velocity * carspeedrate;
                 tempcar.GetComponent<trafficestroyer>().player = player.transform;
             }
