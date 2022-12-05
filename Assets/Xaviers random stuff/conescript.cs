@@ -5,7 +5,7 @@ using UnityEngine;
 public class conescript : MonoBehaviour
 {
 
-    public float slowdown = .90f;
+    public float slowdown;
     // Start is called before the first frame update
     void Start()
     {

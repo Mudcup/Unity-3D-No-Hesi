@@ -7,10 +7,21 @@ using Random = UnityEngine.Random;
 
 public class RoadHandler : MonoBehaviour
 {
+    public float carspawnrate;
+    public float carspeedrate;
+    public float initialspawnspeed;
+
+
     public GameObject road;
     public GameObject cone;
+    public GameObject traffic;
+    public Rigidbody player;
+
+
     public List<GameObject> roadList;
     public List<GameObject> coneList;
+    public List<GameObject> carList;
+
     [SerializeField] private Transform mainCar;
 
     // Update is called once per frame
@@ -22,6 +33,18 @@ public class RoadHandler : MonoBehaviour
             Debug.Log("Tile rendered ahead of Car");
             roadList.Add(Instantiate(road, new Vector3(0, 0, GameManager.lastRoadPositionZ + 20), Quaternion.identity) as GameObject);
             coneList.Add(Instantiate(cone, new Vector3(Random.Range(-8.0f, 8.0f), 1, GameManager.lastRoadPositionZ + 20), Quaternion.identity) as GameObject);
+            
+
+
+            if (Random.Range(0, 10) < carspawnrate && player.velocity.magnitude > initialspawnspeed)
+            {
+                GameObject tempcar;
+
+                carList.Add( tempcar = Instantiate(traffic, new Vector3(Random.Range(-8.0f, 8.0f), 1, GameManager.lastRoadPositionZ ), Quaternion.identity) as GameObject);
+                tempcar.GetComponent<Rigidbody>().velocity = player.velocity * carspeedrate;
+                tempcar.GetComponent<trafficestroyer>().player = player.transform;
+            }
+
             GameManager.lastRoadPositionZ += 20;
         }
 
