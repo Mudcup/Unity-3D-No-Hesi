@@ -15,6 +15,11 @@ public class GameOver : MonoBehaviour
     }
     public void PlayGame()
     {
+        GameManager.lastRoadPositionZ = -100;
+        GameManager.backRoadPositionZ = -100;
+        GameManager.maxCollisions = 5;
+        GameManager.currCollisions = 0;
+        GameManager.finalScore = "";
         SceneManager.LoadScene("Grace Test");
     }
     public void QuitGame()

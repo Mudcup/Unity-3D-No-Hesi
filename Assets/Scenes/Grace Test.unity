@@ -2190,6 +2190,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car
       objectReference: {fileID: 0}
+    - target: {fileID: 5976633860421695775, guid: c896f962c3f79a941a167a1672e5872b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c896f962c3f79a941a167a1672e5872b, type: 3}
 --- !u!4 &7374235974340403141 stripped
