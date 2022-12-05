@@ -18,8 +18,9 @@ public class CameraFollow : MonoBehaviour
    
     private void HandleTranslation()
     {
-        var targetPosition = target.TransformPoint(offset);
-        targetPosition[2] = targetPosition[2]-13;
+        var targetPosition = target.position;
+        targetPosition[1] += 4;
+        targetPosition[2] -= 13;
         transform.position = targetPosition;
     }
     private void HandleRotation()
