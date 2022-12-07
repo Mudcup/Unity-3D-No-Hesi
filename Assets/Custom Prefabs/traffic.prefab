@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 864092004753905364}
   - component: {fileID: 864092004753905365}
   - component: {fileID: 5976633860421695775}
+  - component: {fileID: 2903478928107842590}
   m_Layer: 0
   m_Name: traffic
   m_TagString: Traffic
@@ -79,6 +80,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.69, y: 0.4, z: 2.16}
   m_Center: {x: 0, y: 1.2, z: -0.39}
+--- !u!114 &2903478928107842590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864092004753905366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c2fbdfaae5da6b48be8607cca73bb20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1 &1147676777864941551
 GameObject:
   m_ObjectHideFlags: 0

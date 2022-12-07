@@ -8,7 +8,7 @@ public class trafficestroyer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Car").transform;
     }
 
     // Update is called once per frame
