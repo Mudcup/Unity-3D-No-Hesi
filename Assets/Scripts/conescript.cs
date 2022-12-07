@@ -18,9 +18,15 @@ public class conescript : MonoBehaviour
             lastPointTouched = other;
 
             if (prevCone == null && other.gameObject.activeSelf) //Check to see if first cone hit
+            {
                 GameManager.currCollisions++;
-            else if(prevCone.transform.position != this.gameObject.transform.position && other.gameObject.activeSelf) //Check to see if same cone hit
+                Debug.Log("Cone hit");
+            }
+            else if (prevCone.transform.position != this.gameObject.transform.position && other.gameObject.activeSelf) //Check to see if same cone hit
+            {
                 GameManager.currCollisions++;
+                Debug.Log("Cone hit");
+            }
 
             prevCone = this.gameObject;
 

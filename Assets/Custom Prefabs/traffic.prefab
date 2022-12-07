@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5976633860421695775}
   m_Layer: 0
   m_Name: traffic
-  m_TagString: Player
+  m_TagString: Traffic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 2634732968562023585}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Traffic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
