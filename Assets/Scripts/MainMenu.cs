@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject controlsUI;
+    public GameObject mainMenuUI;
+
     public void PlayGame()
     {
         SceneManager.LoadScene("Grace Test");
@@ -12,7 +15,8 @@ public class MainMenu : MonoBehaviour
     }
     public void Controls()
     {
-        Debug.Log("LoadingControls...");
+        mainMenuUI.SetActive(false);
+        controlsUI.SetActive(true);
     }
     public void QuitGame()
     {
