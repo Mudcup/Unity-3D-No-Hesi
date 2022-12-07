@@ -36,7 +36,7 @@ public class RoadHandler : MonoBehaviour
             
 
 
-            if (Random.Range(0, 10) < carspawnrate && player.velocity.magnitude > initialspawnspeed)
+            if (Random.Range(0, 10) < carspawnrate && player.velocity.z > initialspawnspeed)
             {
                 GameObject tempcar;
 
