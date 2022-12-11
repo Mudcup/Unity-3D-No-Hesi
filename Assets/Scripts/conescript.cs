@@ -33,6 +33,10 @@ public class conescript : MonoBehaviour
             if(GameManager.currCollisions >= GameManager.maxCollisions)
             {
                 GameManager.finalScore = other.gameObject.transform.position.z.ToString("0.00");
+                if(other.gameObject.transform.position.z > GameManager.highScore)
+                {
+                    GameManager.highScore = other.gameObject.transform.position.z;
+                }
                 //Debug.Log("Final Score: " + GameManager.finalScore + "\n");
                 SceneManager.LoadScene("GameOver");
             }
