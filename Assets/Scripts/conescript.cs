@@ -12,6 +12,11 @@ public class conescript : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
+            if (other.gameObject.GetComponent<Transform>().position.z < 1 && other.gameObject.GetComponent<Transform>().position.z > -1)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
             if (other == lastPointTouched && other.gameObject.activeSelf) //Check to see if collider is the same as previous
                 return;
 
