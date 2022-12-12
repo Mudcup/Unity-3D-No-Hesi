@@ -9,7 +9,6 @@ public class trafficDestroyer : MonoBehaviour
     {
         if (GameManager.lastRoadPositionZ < this.transform.position.z || GameManager.backRoadPositionZ > this.transform.position.z)
         {
-            Debug.Log("DELETED");
             Destroy(gameObject);
         }
     }
