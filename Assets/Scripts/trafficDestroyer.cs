@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 using Random = UnityEngine.Random;
@@ -7,6 +8,10 @@ using Random = UnityEngine.Random;
 
 public class trafficDestroyer : MonoBehaviour
 {
+    [SerializeField] Material yellow;
+    [SerializeField] Material purple;
+    [SerializeField] Material red;
+    [SerializeField] Material backLights;
     // Update is called once per frame
     public Transform rb;
     public int type;//0 1 or 2
@@ -16,29 +21,27 @@ public class trafficDestroyer : MonoBehaviour
 
     void Start()
     {
-       
-
-        this.transform.GetChild(0).GetComponent<MeshRenderer>().material = this.transform.GetChild(0).GetComponent<MeshRenderer>().materials[4];
-
         type = Random.Range(0, 3);
         moveforce = 1000;
+        Material[] myMaterials = new Material[2];
+        myMaterials[1] = backLights;
+
         switch (type)
         {
             case 0:
-                this.transform.GetChild(0).GetComponent<MeshRenderer>().material = this.transform.GetChild(0).GetComponent<MeshRenderer>().materials[2];//does nothing
-
+                myMaterials[0] = yellow;
+                this.transform.GetChild(0).GetComponent<MeshRenderer>().materials = myMaterials;//this.transform.GetChild(0).GetComponent<MeshRenderer>().materials[2];//does nothing
                 break;
             case 1:
-                this.transform.GetChild(0).GetComponent<MeshRenderer>().material = this.transform.GetChild(0).GetComponent<MeshRenderer>().materials[3];//go away from you
+                myMaterials[0] = red;
+                this.transform.GetChild(0).GetComponent<MeshRenderer>().materials = myMaterials;//this.transform.GetChild(0).GetComponent<MeshRenderer>().materials[3];//go away from you
                 break;
             case 2:
-
-                this.transform.GetChild(0).GetComponent<MeshRenderer>().material = this.transform.GetChild(0).GetComponent<MeshRenderer>().materials[4];//towards you
-
+                myMaterials[0] = purple;
+                this.transform.GetChild(0).GetComponent<MeshRenderer>().materials = myMaterials;//this.transform.GetChild(0).GetComponent<MeshRenderer>().materials[4];//towards you
                 break;
 
         }
-
         rb = GameObject.Find("Car").GetComponent<Transform>();
     }
 
