@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class CarAudio : MonoBehaviour
@@ -8,14 +9,15 @@ public class CarAudio : MonoBehaviour
     public AudioSource EngineSource;
     public float PitchBoost;
     public float PitchRange;
+    public float BaseVolume;
 
-    float Temp1;
+     float Temp1;
 
     // Start is called before the first frame update
     void Start()
     {
         RB = GetComponent<Rigidbody>();
-        EngineSource.volume = 0.5f;
+        EngineSource.volume = BaseVolume;
         EngineSource.pitch = 0.25f;
     }
 
@@ -23,7 +25,8 @@ public class CarAudio : MonoBehaviour
     void Update()
     {
         float Speed = RB.velocity.magnitude;
-        Temp1 = (Speed - ((int)Speed % 10) * 3) / 55;
-        EngineSource.pitch = Mathf.Lerp(EngineSource.pitch, (PitchRange * Temp1) * PitchBoost, 0.01f);
+        int var = (int)Speed / 15;
+        Temp1 = Mathf.Abs((Speed - (var * (2+var))) / 55);
+        EngineSource.pitch = Mathf.Lerp(EngineSource.pitch, ((PitchRange * Temp1) * PitchBoost) + .25f, 0.01f);
     }
 }
