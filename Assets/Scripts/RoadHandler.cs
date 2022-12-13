@@ -14,12 +14,13 @@ public class RoadHandler : MonoBehaviour
 
     public GameObject road;
     public GameObject cone;
+    public GameObject barricade;
     public GameObject traffic;
     public Rigidbody player;
 
 
     public List<GameObject> roadList;
-    public List<GameObject> coneList;
+    public List<GameObject> obstacleList;
     public List<GameObject> carList;
 
     [SerializeField] private Transform mainCar;
@@ -31,8 +32,14 @@ public class RoadHandler : MonoBehaviour
         while(GameManager.lastRoadPositionZ < mainCar.position.z + 200)
         {
             roadList.Add(Instantiate(road, new Vector3(0, 0, GameManager.lastRoadPositionZ + 20), Quaternion.identity) as GameObject);
-            coneList.Add(Instantiate(cone, new Vector3(Random.Range(-8.0f, 8.0f), 0, GameManager.lastRoadPositionZ + 20), Quaternion.identity) as GameObject);
-            
+
+            int coneOrBarricade = 0;
+            coneOrBarricade = Random.Range(0, 2);
+            Quaternion rot = new Quaternion(0,1,0, (float)Math.Sin(Math.PI/2));
+            if(coneOrBarricade == 0)
+                obstacleList.Add(Instantiate(cone, new Vector3(Random.Range(-8.0f, 8.0f), 0, GameManager.lastRoadPositionZ + 20), Quaternion.identity) as GameObject);
+            else
+                obstacleList.Add(Instantiate(barricade, new Vector3(Random.Range(-8.0f, 8.0f), 0, GameManager.lastRoadPositionZ + 20), rot) as GameObject);
 
 
             if (Random.Range(0, 10) < carspawnrate && player.velocity.z > initialspawnspeed)
@@ -57,9 +64,9 @@ public class RoadHandler : MonoBehaviour
         while (GameManager.lastRoadPositionZ - mainCar.position.z > 240)
         {
             GameObject temp = roadList[roadList.Count - 1];
-            GameObject tempcone = coneList[coneList.Count - 1];
+            GameObject tempcone = obstacleList[obstacleList.Count - 1];
             roadList.RemoveAt(roadList.Count-1);
-            coneList.RemoveAt(coneList.Count - 1);
+            obstacleList.RemoveAt(obstacleList.Count - 1);
             Destroy(temp);
             Destroy(tempcone);
             GameManager.lastRoadPositionZ -= 20;
@@ -69,9 +76,9 @@ public class RoadHandler : MonoBehaviour
         while (mainCar.position.z - GameManager.backRoadPositionZ > 120)
         {
             GameObject temp = roadList[0];
-            GameObject tempcone = coneList[0];
+            GameObject tempcone = obstacleList[0];
             roadList.RemoveAt(0);
-            coneList.RemoveAt(0);
+            obstacleList.RemoveAt(0);
             Destroy(temp);
             Destroy(tempcone);
             GameManager.backRoadPositionZ += 20;
