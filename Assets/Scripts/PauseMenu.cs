@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 //Reference Video: https://www.youtube.com/watch?v=JivuXdrIHK0
@@ -11,6 +12,12 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
     public GameObject controlsUI;
+
+    [SerializeField] private Slider volumeSlider = null;
+    void Start()
+    {
+        volumeSlider.value = PlayerPrefs.GetFloat("VolumeValue");
+    }
 
     // Update is called once per frame
     void Update()
@@ -58,5 +65,23 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Quitting Game...");
         Application.Quit();
+    }
+    public void AdjustVolume(float volume)
+    {
+
+    }
+
+    public void SaveVolumeButton()
+    {
+        float volumeValue = volumeSlider.value;
+        PlayerPrefs.SetFloat("VolumeValue", volumeValue);
+        LoadValues();
+    }
+
+    void LoadValues()
+    {
+        float volumeValue = PlayerPrefs.GetFloat("VolumeValue");
+        volumeSlider.value = volumeValue;
+        AudioListener.volume = volumeValue;
     }
 }
