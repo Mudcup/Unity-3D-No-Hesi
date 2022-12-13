@@ -12,6 +12,7 @@ public class GameOver : MonoBehaviour
     {
         score = this.GetComponent<TextMeshProUGUI>();
         score.text = "SCORE: " + GameManager.finalScore;
+        
     }
     public void PlayGame()
     {

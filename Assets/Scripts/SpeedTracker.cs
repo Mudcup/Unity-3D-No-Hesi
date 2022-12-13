@@ -19,6 +19,6 @@ public class SpeedTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speedometer.text = player.velocity.z.ToString("0");
+        speedometer.text = player.velocity.z.ToString("0") + "\nMPH";
     }
 }
