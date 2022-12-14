@@ -11,8 +11,11 @@ public class GameOver : MonoBehaviour
     public void Awake()
     {
         score = this.GetComponent<TextMeshProUGUI>();
-        score.text = "SCORE: " + GameManager.finalScore;
-        
+        if(GameManager.finalScore == GameManager.highScore.ToString("0.00"))
+            score.text = "NEW RECORD!\nSCORE: " + GameManager.finalScore;
+        else
+            score.text = "SCORE: " + GameManager.finalScore + "\nRECORD: " + GameManager.highScore.ToString("0.00");
+
     }
     public void PlayGame()
     {

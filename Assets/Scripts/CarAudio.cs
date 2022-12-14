@@ -9,7 +9,6 @@ public class CarAudio : MonoBehaviour
     public AudioSource EngineSource;
     public float PitchBoost;
     public float PitchRange;
-    public float BaseVolume;
 
      float Temp1;
 
@@ -17,7 +16,6 @@ public class CarAudio : MonoBehaviour
     void Start()
     {
         RB = GetComponent<Rigidbody>();
-        EngineSource.volume = BaseVolume;
         EngineSource.pitch = 0.25f;
     }
 

@@ -34,9 +34,9 @@ public class RoadHandler : MonoBehaviour
             roadList.Add(Instantiate(road, new Vector3(0, 0, GameManager.lastRoadPositionZ + 20), Quaternion.identity) as GameObject);
 
             int coneOrBarricade = 0;
-            coneOrBarricade = Random.Range(0, 2);
+            coneOrBarricade = Random.Range(0, 5);
             Quaternion rot = new Quaternion(0,1,0, (float)Math.Sin(Math.PI/2));
-            if(coneOrBarricade == 0)
+            if(coneOrBarricade <= 2)
                 obstacleList.Add(Instantiate(cone, new Vector3(Random.Range(-8.0f, 8.0f), 0, GameManager.lastRoadPositionZ + 20), Quaternion.identity) as GameObject);
             else
                 obstacleList.Add(Instantiate(barricade, new Vector3(Random.Range(-8.0f, 8.0f), 0, GameManager.lastRoadPositionZ + 20), rot) as GameObject);
