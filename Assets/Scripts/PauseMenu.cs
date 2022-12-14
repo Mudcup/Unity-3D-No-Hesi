@@ -12,11 +12,15 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
     public GameObject controlsUI;
+    AudioSource mainCamera;
+    AudioSource car;
 
     [SerializeField] private Slider volumeSlider = null;
     void Start()
     {
         volumeSlider.value = PlayerPrefs.GetFloat("VolumeValue");
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+        car = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -68,7 +72,8 @@ public class PauseMenu : MonoBehaviour
     }
     public void AdjustVolume(float volume)
     {
-
+        mainCamera.volume = (float)0.8 * volume;
+        car.volume = (float)0.6 * volume;
     }
 
     public void SaveVolumeButton()
